@@ -133,6 +133,8 @@ var HEADING_COLUMN = {
 			if (!exchangeRates.hasOwnProperty(currency)) {
 				var rate = getLatestExchangeRate(currency);
 				exchangeRates[currency] = rate;
+				SpreadsheetApp.getActiveSpreadsheet().toast(
+					'Exchange Rate', 'Exchange rate for USD - ' + currency + ': ' + rate, 5);
 			}
 			transformAmountToExchangeRate(cell, exchangeRates[currency]);
 		  }
