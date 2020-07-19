@@ -192,6 +192,7 @@ function copyDataToTracker() {
   // Copy data to tracker
   var trackerSpreadsheet = SpreadsheetApp.openById(TRACKER_ID).getSheetByName(targetSheetName);
   trackerSpreadsheet.getRange(1,1, sourceData.length, sourceData[0].length).setValues(sourceData);
+  // TODO set canary text and trigger flow
 }
 
 /*
